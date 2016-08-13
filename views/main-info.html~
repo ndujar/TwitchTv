@@ -1,0 +1,38 @@
+<div ng-if="!channels">
+  Loading results for channels...
+</div>
+
+	<ul  style="list-style: none;" class="inner-p">
+    <li ng-repeat="channel in channels">
+    	<div class="panel panel-info">  			
+  			<div class="panel-heading" >
+  				<span style='font-weight: bold;'>Channel: {{ channel.name }}</span>
+  			</div>
+  			<div class="panel-body">
+  				<div class="col-sm-4" >
+  			  		<img ng-src="{{ channel.logo }}" class="thumbnail animated flip movie-poster"> 	  				
+  				</div>
+  			  	<div class="col-sm-8">
+  			  		<ul class="list-group">
+  			  			<li class="list-group-item">Game: {{ channel.game }} </li>
+					  	<li class="list-group-item">Views: {{channel.views}}</li>
+					  	<li class="list-group-item">Status: {{channel.status}}</li>
+					  	<li class="list-group-item">Followers: {{channel.followers}}</li>
+					  	<li class="list-group-item">Online: {{channel.connected}}</li>
+					</ul>
+  			  	</div>
+
+  			</div>
+  			<div class="panel-footer" ><a href={{channel.url}} target="_blank" >{{channel.url}}<a> </div>
+		</div>
+    	<div class= no-js>
+	         	
+    	</div>
+    </li>
+  </ul>
+ 
+ 
+
+<div ng-if="details.Response==='False'">
+  No results found.
+</div>
